@@ -70,19 +70,15 @@ How to analyze the Activity Logger's logs: the rules any analysis must follow, a
   https://github.com/Julian-Moncarz/app-gate (git from 2026-10-24). Passes go to
   `~/personal-tools/data/app-gate/AppGate.log`, but its "gate shown" and "gate closed without passing" lines go
   to stderr, `~/personal-tools/data/app-gate/AppGate-errors.log`, so read both.
-- `~/personal-tools/break-coach/`: Break Coach, Julian's break app (built 2026-10-24, private repo
-  https://github.com/Julian-Moncarz/break-coach, login item `com.julianmoncarz.breakcoach`). After
-  75 minutes at the screen without a 5-minute break it waits for a moment with no call (Google
-  Calendar plus Meet/Zoom/Granola windows from this log) and no flow (under 3 app switches in 10
-  minutes), gives a 60-second heads-up, then covers the screen with one thing to do. About once a
-  day, in daylight with 15 free minutes, it sends him outside. No skip or snooze, only a small
-  close button. Log: `~/personal-tools/data/break-coach/BreakCoach.log` ("ts<TAB>event<TAB>detail": heads-up, break
-  shown, break taken, closed early, deferred, natural break). Prompts:
-  `~/personal-tools/data/break-coach/prompts.json` (editable).
-- `~/personal-tools/data/break-coach/calendar-ical-url` (mode 600, moved from an AppGate
-  folder the same day): the secret iCal address of Julian's Kairos Google Calendar. It's a
-  credential: never print it, copy it into a repo, or put it in a report. If it leaks, Julian resets
-  it in Calendar settings > Integrate calendar > Reset.
+- `~/personal-tools/break-coach/`: Break Coach, Julian's break app (built 2026-10-24, simplified the
+  same day; private repo https://github.com/Julian-Moncarz/break-coach, login item
+  `com.julianmoncarz.breakcoach`). After 60 minutes at the screen without 5 minutes away (idle,
+  locked, display off, lid shut, asleep) it covers every screen with one thing to do. The first
+  break after noon each day sends him outside. Only a small close button, and a closed break
+  returns 30 minutes later. No calendar, call or flow checks. Log:
+  `~/personal-tools/data/break-coach/BreakCoach.log` ("ts<TAB>event<TAB>detail": started, break
+  shown, break taken, closed early, natural break). Prompts: `data/break-coach/prompts.json`
+  (editable). Current run: `data/break-coach/state.json`.
 - `~/personal-tools/attention-ledger/`: the weekly Attention Ledger (code, `NOTES.md` with every
   decision about the report). Its week folders are in `~/personal-tools/data/attention-ledger/runs/`.
   The routine that runs it is `~/.claude/scheduled-tasks/weekly-screen-time/SKILL.md`.
@@ -161,3 +157,14 @@ an analysis teaches something a future session should know. Newest at the bottom
 - 2026-10-24: Fixed in ledger.py: Claude Code time now counts as hiring only when hiring words
   appear in at least a quarter of Julian's messages in that session, and never for school. Hiring
   for October 17 to 23 went from 4.9 h to 1.8 h. Earlier weeks barely moved (10.9, 12.8, 9.7 h).
+- 2026-10-24: Break Coach's first real break (15:39, "outside", 210 min) was false. Julian's
+  laptop slept through a 2-hour flight, Break Coach didn't count sleep as a break, so the run
+  carried on from 12:09. His "closed early" at 15:39:55Z is that bug, not a skipped break, so
+  leave it out of the October 24 to 30 scorecard. Sleep, a closed lid and long gaps between
+  checks now count as breaks.
+- 2026-10-24: Break Coach was simplified the same evening at Julian's request: no calendar, no
+  call or flow checks, no heads-up, a 60-minute threshold. The saved secret iCal address
+  (`data/break-coach/calendar-ical-url`) was deleted, since nothing uses it. Google still
+  honours that address until Julian resets it (Calendar settings > Integrate calendar > Reset).
+  From October 25, Break Coach logs only "started", "break shown", "break taken", "closed early"
+  and "natural break" (no "heads-up" or "deferred").
