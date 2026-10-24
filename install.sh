@@ -1,6 +1,6 @@
 #!/bin/bash
 # Builds the app, copies it to ~/Applications, and registers a LaunchAgent so it
-# starts at login and is relaunched if it ever exits. Logs go to ~/ActivityLog.
+# starts at login and is relaunched if it ever exits. Logs go to ~/personal-tools/data/activity-logger.
 set -euo pipefail
 cd "$(dirname "$0")"
 ./build.sh
@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 LABEL=com.julianmoncarz.activitylogger
 DEST="$HOME/Applications/ActivityLogger.app"
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
-LOGDIR="$HOME/ActivityLog"
+LOGDIR="$HOME/personal-tools/data/activity-logger"
 
 mkdir -p "$HOME/Applications" "$HOME/Library/LaunchAgents" "$LOGDIR"
 
@@ -35,7 +35,7 @@ cat > "$PLIST" <<PLIST
 	<key>ProcessType</key>
 	<string>Interactive</string>
 	<key>StandardErrorPath</key>
-	<string>$LOGDIR/_logger-errors.log</string>
+	<string>$LOGDIR/errors.log</string>
 </dict>
 </plist>
 PLIST

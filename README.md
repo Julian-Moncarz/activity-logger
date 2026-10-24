@@ -1,7 +1,7 @@
 # Activity Logger
 
 A tiny macOS app that logs what's in front of you (app, window title, Chrome tab) to
-`~/ActivityLog/YYYY-MM-DD.jsonl`. Raw data only, for analyzing later (for example by
+`~/personal-tools/data/activity-logger/YYYY-MM-DD.jsonl`. Raw data only, for analyzing later (for example by
 pasting a week of logs into Claude).
 
 ## Install

@@ -3,7 +3,7 @@ import ApplicationServices
 import CoreGraphics
 
 // Activity Logger: records what was in front of you, second by second, as raw
-// JSONL segments in ~/ActivityLog/YYYY-MM-DD.jsonl. No analysis, no filtering.
+// JSONL segments in ~/personal-tools/data/activity-logger/YYYY-MM-DD.jsonl. No analysis, no filtering.
 //
 // Each line is one segment: a stretch of time where the status, frontmost app,
 // window title and (for Chrome) tab URL/title all stayed the same.
@@ -12,7 +12,7 @@ import CoreGraphics
 
 enum Config {
     static let logDir = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("ActivityLog", isDirectory: true)
+        .appendingPathComponent("personal-tools/data/activity-logger", isDirectory: true)
     /// No keyboard/mouse input for this long means you count as idle.
     static let idleThreshold: TimeInterval = 300
     /// How often the frontmost app / window / tab is sampled.
