@@ -75,7 +75,9 @@ How to analyze the Activity Logger's logs: the rules any analysis must follow, a
   `com.julianmoncarz.breakcoach`). After 60 minutes at the screen without 5 minutes away (idle,
   locked, display off, lid shut, asleep) it covers every screen with one thing to do. The first
   break after noon each day sends him outside. Only a small close button, and a closed break
-  returns 30 minutes later. No calendar, call or flow checks. Log:
+  returns 30 minutes later. No calendar, call or flow checks. Watching a video or being on a call
+  (an app keeping the display awake, or the mic in use, from macOS power assertions, ignoring
+  caffeinate) counts as present for up to 2 hours (video) or 1 hour (mic) without input. Log:
   `~/personal-tools/data/break-coach/BreakCoach.log` ("ts<TAB>event<TAB>detail": started, break
   shown, break taken, closed early, natural break). Prompts: `data/break-coach/prompts.json`
   (editable). Current run: `data/break-coach/state.json`.
