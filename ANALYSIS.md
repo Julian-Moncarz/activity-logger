@@ -170,3 +170,12 @@ an analysis teaches something a future session should know. Newest at the bottom
   honours that address until Julian resets it (Calendar settings > Integrate calendar > Reset).
   From October 25, Break Coach logs only "started", "break shown", "break taken", "closed early"
   and "natural break" (no "heads-up" or "deferred").
+- 2026-11-07: Personal event pages fall through to Work like other unknown Chrome sites. Partiful
+  (planning a birthday hike, 41 min on 2026-10-31 and 11-02) counted as Kairos work and made a fake
+  44-minute Saturday "focus stretch". Added to `LEIS_HOSTS` in ledger.py, every week recomputed.
+- 2026-11-07: Since 2026-10-26 a taken Break Coach break lasts 3 minutes, but "longest run at the
+  screen" only resets after 5 minutes away, so the metric can't credit those breaks (weekday runs of
+  166 to 220 min fall to 69 to 113 when they count). Read both before judging a break goal.
+- 2026-11-07: High comms on a decisions day can be the work itself (2026-11-04: record Slack opens
+  and comms minutes, 84 min in hiring channels, journal rating 9). Comms share of open weekday time
+  (outside events) tracks checking better than total comms hours.
