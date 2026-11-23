@@ -1,6 +1,6 @@
 # Activity Logger
 
-How to analyze the Activity Logger's logs: the rules any analysis must follow, and lessons learned. The logs are one file per day in `~/personal-tools/data/activity-logger/YYYY-MM-DD.jsonl` (source, install and log format in `README.md` here). Moved here from `data/activity-logger/CLAUDE.md` on 2026-10-24 so changes have git history.
+How to analyze the Activity Logger's logs: the rules any analysis must follow, and lessons learned. The logs are one encrypted file per day in `~/personal-tools/data/activity-logger/YYYY-MM-DD.jsonl.enc`. Read them with `activity-logger export` (plain JSONL on stdout, after Touch ID), never from the files directly (source, install and log format in `README.md` here). Rows with `"private": true` are Chrome windows outside the logged profile: count their time as Chrome, with nothing known about the content. Moved here from `data/activity-logger/CLAUDE.md` on 2026-10-24 so changes have git history.
 
 ## Analyzing the logs
 
